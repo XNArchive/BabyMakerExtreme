@@ -110,7 +110,7 @@ public class GameScreen : Screen
 		SoundManager.GetSoundEffect("sounds/freesound/babies/65895__Robinhood76");
 		SoundManager.GetSoundEffect("sounds/freesound/babies/81211__bennstir__Baby_laugh1");
 		SoundManager.GetSoundEffect("sounds/pop");
-		SceneRenderer.GetContentManager().Load<Song>("sounds/incompetech/Big Rock");
+		SceneRenderer.GetContentManager().Load<Song>("sounds/incompetech/Big Rock.wav");
 	}
 
 	public void PhysicsThreadProc()
@@ -173,7 +173,7 @@ public class GameScreen : Screen
 		m_Contractions = new ContractionManager(m_Pushes);
 		if (firstRun)
 		{
-			Mp3MusicPlayer.Initialize("sounds/incompetech/Somewhere Sunny", shouldReplay: true, forceReplay: true);
+			Mp3MusicPlayer.Initialize("sounds/incompetech/Somewhere Sunny.wav", shouldReplay: true, forceReplay: true);
 			Mp3MusicPlayer.FadeIn(1f);
 		}
 		GC.Collect();
@@ -291,7 +291,7 @@ public class GameScreen : Screen
 			{
 				m_state = GameState.AIR_PHASE;
 				ThrowBaby();
-				Mp3MusicPlayer.Initialize("sounds/incompetech/Big Rock", shouldReplay: true, forceReplay: true);
+				Mp3MusicPlayer.Initialize("sounds/incompetech/Big Rock.wav", shouldReplay: true, forceReplay: true);
 				Mp3MusicPlayer.FadeIn(10f);
 			}
 		}

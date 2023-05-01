@@ -133,8 +133,6 @@ public static class SpriteManager
 
 	public static SpritePage GetPage(string pageName, bool isTheme)
 	{
-		throw new Exception("GamerServices is not implemented on FNA/XNA!");
-		return null;
 		//IL_0015: Unknown result type (might be due to invalid IL or missing references)
 		//IL_001a: Unknown result type (might be due to invalid IL or missing references)
 		//IL_0022: Unknown result type (might be due to invalid IL or missing references)
@@ -172,12 +170,12 @@ public static class SpriteManager
 		//	}
 		//	return pages[pageName];
 		//}
-		//if (pages.ContainsKey(pageName))
-		//{
-		//	return pages[pageName];
-		//}
-		//pages[pageName] = new SpritePage(content.Load<Texture2D>(pageName), pageName, isTheme);
-		//return pages[pageName];
+		if (pages.ContainsKey(pageName))
+		{
+			return pages[pageName];
+		}
+		pages[pageName] = new SpritePage(content.Load<Texture2D>(pageName), pageName, isTheme);
+		return pages[pageName];
 	}
 
 	public static void Update(GameTime gameTime)

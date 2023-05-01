@@ -169,7 +169,7 @@ public static class Mp3MusicPlayer
 	{
 		MediaPlayer.Volume = volume;
 		sm_bFadeOut = false;
-		MediaPlayer.Play(sm_song);
+		//MediaPlayer.Play(sm_song);
 		sm_bMusicQueued = true;
 		MediaPlayer.IsRepeating = false;
 	}

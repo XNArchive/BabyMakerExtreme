@@ -196,6 +196,7 @@ public class Game1 : Game
 		Last60FramesDrawTimer = new List<int>();
 		avgDrawRate = 0.0;
 		SoundEffect.MasterVolume = 0.7f;
+		base.Initialize();
 	}
 
 	protected override void LoadContent()
@@ -225,10 +226,12 @@ public class Game1 : Game
 		screenSprite = SpriteManager.GetSprite("images/whitesquare", new Vector2(0f, 0f), 0.9f);
 		screenSprite.Alpha = 0.5f;
 		ParticleManager.Initialize();
+		base.LoadContent();
 	}
 
 	protected override void UnloadContent()
 	{
+		base.UnloadContent();
 	}
 
 	public static void ExitGame()
@@ -250,7 +253,7 @@ public class Game1 : Game
 				((GameScreen)m_stkScreens[i]).EndPhysicsLoop();
 			}
 		}
-		this.OnExiting(sender, args);
+		base.OnExiting(sender, args);
 	}
 
 	protected override void Update(GameTime gameTime)
@@ -292,11 +295,11 @@ public class Game1 : Game
 			ParticleManager.Update(m_tUpdateTracker);
 		}
 		SpawnTestDataScreen();
-		//if (m_avatar != null)
-		//{
-		//	m_avatar.Update();
-		//}
-		this.Update(gameTime);
+        //if (m_avatar != null)
+        //{
+        //	m_avatar.Update();
+        //}
+        base.Update(gameTime);
 		Profiler.EndTimer(ProfileTypes.PROF_UPDATE);
 	}
 
@@ -334,7 +337,7 @@ public class Game1 : Game
 		GraphicsDevice.SamplerStates[0].AddressV = TextureAddressMode.Wrap;
 		GameBeginDraw();
 		SceneRenderer.SetActiveTexture(null);
-		spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.Default, RasterizerState.CullNone, null, SceneRenderer.GetBatchMatrix());
+		spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, null, null, null, null, SceneRenderer.GetBatchMatrix());
 		SceneRenderer.IniFrame(b: false);
 		SceneRenderer.GetEffect();
 		int num = m_stkScreens.Count - 1;
@@ -348,7 +351,7 @@ public class Game1 : Game
 				GameEndDraw();
 				GameBeginDraw();
 				SceneRenderer.SetActiveTexture(null);
-                spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.Default, RasterizerState.CullNone, null, SceneRenderer.GetBatchMatrix());
+                spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, null, null, null, null, SceneRenderer.GetBatchMatrix());
                 SceneRenderer.IniFrame(b: false);
 				m_stkScreens[num].Draw(m_tDrawTracker);
 			}
@@ -358,7 +361,7 @@ public class Game1 : Game
 		GameEndDraw();
 		GameBeginDraw();
 		SceneRenderer.SetActiveTexture(null);
-        spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.Default, RasterizerState.CullNone, null, SceneRenderer.GetBatchMatrix());
+        spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, null, null, null, null, SceneRenderer.GetBatchMatrix());
         SceneRenderer.IniFrame(b: false);
 		m_stkScreens.Last().Draw(m_tDrawTracker);
 		ParticleManager.Draw(m_tDrawTracker);
@@ -388,7 +391,7 @@ public class Game1 : Game
 		SpriteManager.Draw(gameTime);
 		spriteBatch.End();
 		GameEndDraw();
-		this.Draw(gameTime);
+        base.Draw(gameTime);
 		Profiler.EndTimer(ProfileTypes.PROF_DRAW);
 	}
 

@@ -536,7 +536,7 @@ public static class SceneRenderer
 	{
 		//IL_0012: Unknown result type (might be due to invalid IL or missing references)
 		batch.End();
-		batch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.Default, RasterizerState.CullNone, null, GetBatchMatrix());
+		batch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied, SamplerState.LinearClamp, DepthStencilState.Default, RasterizerState.CullNone, null, GetBatchMatrix());
 	}
 
 	public static void SetTexturedRectData()
