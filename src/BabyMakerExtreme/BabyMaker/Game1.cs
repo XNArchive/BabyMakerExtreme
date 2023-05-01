@@ -173,33 +173,6 @@ public class Game1 : Game
 
 	protected override void Initialize()
 	{
-        //IL_0040: Unknown result type (might be due to invalid IL or missing references)
-        //IL_004a: Expected O, but got Unknown
-        //IL_0051: Unknown result type (might be due to invalid IL or missing references)
-        //IL_005b: Expected O, but got Unknown
-        //IL_0076: Unknown result type (might be due to invalid IL or missing references)
-        //IL_007b: Unknown result type (might be due to invalid IL or missing references)
-        //IL_0080: Unknown result type (might be due to invalid IL or missing references)
-        //IL_0085: Unknown result type (might be due to invalid IL or missing references)
-        //IL_008a: Unknown result type (might be due to invalid IL or missing references)
-        //IL_009a: Unknown result type (might be due to invalid IL or missing references)
-        //IL_009f: Unknown result type (might be due to invalid IL or missing references)
-        //IL_00af: Unknown result type (might be due to invalid IL or missing references)
-        //IL_00b4: Unknown result type (might be due to invalid IL or missing references)
-        //IL_00c6: Unknown result type (might be due to invalid IL or missing references)
-        //IL_00cb: Unknown result type (might be due to invalid IL or missing references)
-        //IL_00e4: Unknown result type (might be due to invalid IL or missing references)
-        //IL_00e9: Unknown result type (might be due to invalid IL or missing references)
-        //IL_0124: Unknown result type (might be due to invalid IL or missing references)
-        //IL_0129: Unknown result type (might be due to invalid IL or missing references)
-        //IL_012e: Unknown result type (might be due to invalid IL or missing references)
-        //IL_0143: Unknown result type (might be due to invalid IL or missing references)
-        //IL_0148: Unknown result type (might be due to invalid IL or missing references)
-        //IL_015d: Unknown result type (might be due to invalid IL or missing references)
-        //IL_0162: Unknown result type (might be due to invalid IL or missing references)
-        //IL_016d: Unknown result type (might be due to invalid IL or missing references)
-        //IL_017d: Unknown result type (might be due to invalid IL or missing references)
-        //IL_018c: Unknown result type (might be due to invalid IL or missing references)
         Profiler = new Profilehelper();
 		m_tUpdateTracker = new TimeTracker();
 		m_tDrawTracker = new TimeTracker();
@@ -223,16 +196,10 @@ public class Game1 : Game
 		Last60FramesDrawTimer = new List<int>();
 		avgDrawRate = 0.0;
 		SoundEffect.MasterVolume = 0.7f;
-        this.Initialize();
 	}
 
 	protected override void LoadContent()
 	{
-        //IL_000d: Unknown result type (might be due to invalid IL or missing references)
-        //IL_0017: Expected O, but got Unknown
-        //IL_008d: Unknown result type (might be due to invalid IL or missing references)
-        //IL_00da: Unknown result type (might be due to invalid IL or missing references)
-
         b = new BasicEffect(GraphicsDevice);
         b.VertexColorEnabled = true;
         b.World = worldMatrix;
